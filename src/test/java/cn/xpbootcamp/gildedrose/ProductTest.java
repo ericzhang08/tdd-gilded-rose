@@ -10,7 +10,7 @@ public class ProductTest {
         int sellIn =2;
         int quality = 5;
         Product product = new Product(sellIn, quality);
-        product.passDay();
+        product.passDay(1);
         assertEquals(product.getQuality(), 4);
     }
 
@@ -19,7 +19,7 @@ public class ProductTest {
         int sellIn = 0;
         int quality = 5;
         Product product = new Product(sellIn, quality);
-        product.passDay();
+        product.passDay(1);
         assertEquals(product.getQuality(), 3);
     }
 

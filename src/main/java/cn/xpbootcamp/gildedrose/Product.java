@@ -10,7 +10,7 @@ public class Product {
         this.quality = quality;
     }
 
-    public void passDay() {
+    public void passDay(int days) {
         if (sellIn <= 0) {
             sellIn--;
             quality -= 2;
