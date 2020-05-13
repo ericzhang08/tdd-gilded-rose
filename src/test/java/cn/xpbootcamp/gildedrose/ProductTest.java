@@ -50,7 +50,14 @@ public class ProductTest {
         assertEquals(product.getQuality(), 5);
     }
 
-
+    @Test
+    public void should_quality_is_bigger_than_0_when_multiple_day_passed_given_and_quality_bigger_than_0_product() {
+        int sellIn = 5;
+        int quality = 5;
+        Product product = new Product(sellIn, quality);
+        product.passDays(10);
+        assertEquals(product.getQuality(), 0);
+    }
 
 
 

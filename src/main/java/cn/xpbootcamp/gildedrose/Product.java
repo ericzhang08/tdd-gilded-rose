@@ -19,6 +19,9 @@ public class Product {
             }
             sellIn--;
         }
+        if (quality < 0) {
+            quality = 0;
+        }
     }
 
     public Object getQuality() {
