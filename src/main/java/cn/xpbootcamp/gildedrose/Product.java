@@ -47,7 +47,9 @@ public class Product {
             quality += 2;
             quality = Math.min(quality, 50);
         } else {
-            quality -= 2;
+            if (!type.equals("Sulfuras")) {
+                quality -= 2;
+            }
         }
     }
 
