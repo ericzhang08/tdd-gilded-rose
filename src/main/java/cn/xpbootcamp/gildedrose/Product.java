@@ -6,7 +6,6 @@ public class Product {
     private String type;
 
     public Product(String type, int sellIn, int quality) {
-        this.type = type;
         if (quality > 50) {
             quality = 50;
         }
@@ -23,18 +22,30 @@ public class Product {
     }
 
     private void processQualityPerDay() {
-        if (sellIn > 0) {
-            if (type == "Aged Brie") {
-                quality++;
-            } else {
-                quality--;
-            }
+        if (isExpired()) {
+            updateQualityExpired();
         } else {
-            quality -= 2;
+            updateQualityUnexpired();
         }
         if (quality < 0) {
             quality = 0;
         }
+    }
+
+    private void updateQualityUnexpired() {
+        if (type == "Aged Brie") {
+            quality++;
+        } else {
+            quality--;
+        }
+    }
+
+    private void updateQualityExpired() {
+        quality -= 2;
+    }
+
+    private boolean isExpired() {
+        return sellIn <= 0;
     }
 
     public Object getQuality() {
