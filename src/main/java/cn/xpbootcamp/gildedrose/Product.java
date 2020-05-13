@@ -10,13 +10,13 @@ public class Product {
         this.quality = quality;
     }
 
-    public void passDay(int days) {
+    public void passDays(int days) {
         if (sellIn <= 0) {
             sellIn--;
-            quality -= 2;
-        }else {
+            quality -= 2 * days;
+        } else {
             sellIn--;
-            quality--;
+            quality -= days;
         }
 
     }

@@ -10,7 +10,7 @@ public class ProductTest {
         int sellIn =2;
         int quality = 5;
         Product product = new Product(sellIn, quality);
-        product.passDay(1);
+        product.passDays(1);
         assertEquals(product.getQuality(), 4);
     }
 
@@ -19,8 +19,18 @@ public class ProductTest {
         int sellIn = 0;
         int quality = 5;
         Product product = new Product(sellIn, quality);
-        product.passDay(1);
+        product.passDays(1);
         assertEquals(product.getQuality(), 3);
     }
+
+    @Test
+    public void should_quality_decrease_1_point_per_day_when_multiple_day_passed_given_on_date_product() {
+        int sellIn =10;
+        int quality = 10;
+        Product product = new Product(sellIn, quality);
+        product.passDays(5);
+        assertEquals(product.getQuality(), 5);
+    }
+
 
 }
