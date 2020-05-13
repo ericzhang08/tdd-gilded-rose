@@ -41,7 +41,11 @@ public class Product {
     }
 
     private void updateQualityExpired() {
-        quality -= 2;
+        if(type == "Aged Brie"){
+            quality+=2;
+        }else {
+            quality -= 2;
+        }
     }
 
     private boolean isExpired() {
