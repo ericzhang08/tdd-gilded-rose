@@ -36,15 +36,17 @@ public class Product {
         if (type.equals("Aged Brie")) {
             quality++;
         } else {
-            quality--;
+            if (!type.equals("Sulfuras")) {
+                quality--;
+            }
         }
     }
 
     private void updateQualityExpired() {
-        if(type.equals("Aged Brie")){
-            quality+=2;
+        if (type.equals("Aged Brie")) {
+            quality += 2;
             quality = Math.min(quality, 50);
-        }else {
+        } else {
             quality -= 2;
         }
     }

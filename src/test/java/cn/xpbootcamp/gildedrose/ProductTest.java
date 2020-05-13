@@ -7,6 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class ProductTest {
 
     public static final String AGED_BRIE = "Aged Brie";
+    public static final String SULFURAS = "Sulfuras";
 
     @Test
     public void should_quality_decrease_1_point_per_day_when_one_day_passed_given_on_date_normal_product() {
@@ -107,6 +108,15 @@ public class ProductTest {
         Product product = new Product(AGED_BRIE, sellIn, quality);
         product.passDays(10);
         assertEquals(35, product.getQuality());
+    }
+
+    @Test
+    public void should_quality_does_not_change_when_multiple_days_passed_given_an_on_date_sulfuras_product() {
+        int sellIn = 10;
+        int quality = 20;
+        Product product = new Product(SULFURAS, sellIn, quality);
+        product.passDays(5);
+        assertEquals(20, product.getQuality());
     }
 
 
