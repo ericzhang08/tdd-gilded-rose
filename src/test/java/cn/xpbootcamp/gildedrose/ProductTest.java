@@ -5,6 +5,9 @@ import org.junit.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ProductTest {
+
+    public static final String AGED_BRIE = "Aged Brie";
+
     @Test
     public void should_quality_decrease_1_point_per_day_when_one_day_passed_given_on_date_normal_product() {
         int sellIn = 2;
@@ -92,9 +95,18 @@ public class ProductTest {
     public void should_biggest_quality_is_50__when_multiple_day_passed_given_aged_brie_product_quality_is_smaller_than_50_and_increase_to_50() {
         int sellIn = 0;
         int quality = 40;
-        Product product = new Product("Aged Brie", sellIn, quality);
+        Product product = new Product(AGED_BRIE, sellIn, quality);
         product.passDays(10);
         assertEquals(50, product.getQuality());
+    }
+
+    @Test
+    public void should_quality_increase_when_multiple_day_passed_given_an_on_date_product_become_an_out_of_date_aged_brie_product() {
+        int sellIn = 5;
+        int quality = 20;
+        Product product = new Product(AGED_BRIE, sellIn, quality);
+        product.passDays(10);
+        assertEquals(35, product.getQuality());
     }
 
 
