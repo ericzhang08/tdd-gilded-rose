@@ -11,14 +11,14 @@ public class Product {
     }
 
     public void passDays(int days) {
-        if (sellIn <= 0) {
+        for (int i = 0; i < days; i++) {
+            if (sellIn > 0) {
+                quality--;
+            } else {
+                quality -= 2;
+            }
             sellIn--;
-            quality -= 2 * days;
-        } else {
-            sellIn--;
-            quality -= days;
         }
-
     }
 
     public Object getQuality() {

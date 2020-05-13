@@ -41,4 +41,18 @@ public class ProductTest {
         assertEquals(product.getQuality(), 0);
     }
 
+    @Test
+    public void should_quality_decrease_when_multiple_day_passed_given_an_on_date_product_become_an_out_of_date_product() {
+        int sellIn = 5;
+        int quality = 20;
+        Product product = new Product(sellIn, quality);
+        product.passDays(10);
+        assertEquals(product.getQuality(), 5);
+    }
+
+
+
+
+
+
 }
