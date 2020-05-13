@@ -4,7 +4,7 @@ public class Product {
     private int sellIn;
     private int quality;
 
-    public Product(int sellIn, int quality) {
+    public Product(String type, int sellIn, int quality) {
 
         if (quality > 50) {
             quality = 50;
