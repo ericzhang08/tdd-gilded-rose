@@ -13,6 +13,9 @@ public class Product {
         this.sellIn = sellIn;
         this.quality = quality;
     }
+    public static Product create(String type, int sellIn, int quality) {
+        return new Product(type, sellIn, quality);
+    }
 
     public void passDays(int days) {
         for (int i = 0; i < days; i++) {
