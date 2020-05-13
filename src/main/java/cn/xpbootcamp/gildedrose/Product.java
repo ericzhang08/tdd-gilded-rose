@@ -33,7 +33,7 @@ public class Product {
     }
 
     private void updateQualityUnexpired() {
-        if (type == "Aged Brie") {
+        if (type.equals("Aged Brie")) {
             quality++;
         } else {
             quality--;
@@ -41,8 +41,9 @@ public class Product {
     }
 
     private void updateQualityExpired() {
-        if(type == "Aged Brie"){
+        if(type.equals("Aged Brie")){
             quality+=2;
+            quality = Math.min(quality, 50);
         }else {
             quality -= 2;
         }

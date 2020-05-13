@@ -88,9 +88,14 @@ public class ProductTest {
         assertEquals(20, product.getQuality());
     }
 
-
-
-
+    @Test
+    public void should_biggest_quality_is_50__when_multiple_day_passed_given_aged_brie_product_quality_is_smaller_than_50_and_increase_to_50() {
+        int sellIn = 0;
+        int quality = 40;
+        Product product = new Product("Aged Brie", sellIn, quality);
+        product.passDays(10);
+        assertEquals(50, product.getQuality());
+    }
 
 
 }
