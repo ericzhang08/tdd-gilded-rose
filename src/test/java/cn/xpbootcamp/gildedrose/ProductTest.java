@@ -6,8 +6,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ProductTest {
     @Test
-   public void should_quality_decrease_1_point_per_day_when_one_day_passed_given_on_date_product() {
-        int sellIn =2;
+    public void should_quality_decrease_1_point_per_day_when_one_day_passed_given_on_date_product() {
+        int sellIn = 2;
         int quality = 5;
         Product product = new Product(sellIn, quality);
         product.passDays(1);
@@ -25,12 +25,20 @@ public class ProductTest {
 
     @Test
     public void should_quality_decrease_1_point_per_day_when_multiple_day_passed_given_on_date_product() {
-        int sellIn =10;
+        int sellIn = 10;
         int quality = 10;
         Product product = new Product(sellIn, quality);
         product.passDays(5);
         assertEquals(product.getQuality(), 5);
     }
 
+    @Test
+    public void should_quality_decrease_2_point_per_day_when_multiple_day_passed_given_an_out_of_date_product() {
+        int sellIn = 0;
+        int quality = 10;
+        Product product = new Product(sellIn, quality);
+        product.passDays(5);
+        assertEquals(product.getQuality(), 0);
+    }
 
 }
