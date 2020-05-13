@@ -69,5 +69,18 @@ public class ProductTest {
         assertEquals(49, product.getQuality());
     }
 
+    @Test
+    public void should_quality_increase_one_point_per_day_when_multiple_day_passed_given_aged_brie_product_is_on_date() {
+        int sellIn = 10;
+        int quality = 10;
+        Product product = new Product("Aged Brie", sellIn, quality);
+        product.passDays(5);
+        assertEquals(15, product.getQuality());
+    }
+
+
+
+
+
 
 }

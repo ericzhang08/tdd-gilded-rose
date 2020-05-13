@@ -3,12 +3,14 @@ package cn.xpbootcamp.gildedrose;
 public class Product {
     private int sellIn;
     private int quality;
+    private String type;
 
     public Product(String type, int sellIn, int quality) {
-
+        this.type = type;
         if (quality > 50) {
             quality = 50;
         }
+        this.type = type;
         this.sellIn = sellIn;
         this.quality = quality;
     }
@@ -22,7 +24,11 @@ public class Product {
 
     private void processQualityPerDay() {
         if (sellIn > 0) {
-            quality--;
+            if (type == "Aged Brie") {
+                quality++;
+            } else {
+                quality--;
+            }
         } else {
             quality -= 2;
         }
