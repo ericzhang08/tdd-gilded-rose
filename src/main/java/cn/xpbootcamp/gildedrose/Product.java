@@ -6,6 +6,9 @@ public class Product {
 
     public Product(int sellIn, int quality) {
 
+        if (quality > 50) {
+            quality = 50;
+        }
         this.sellIn = sellIn;
         this.quality = quality;
     }

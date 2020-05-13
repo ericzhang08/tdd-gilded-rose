@@ -11,7 +11,7 @@ public class ProductTest {
         int quality = 5;
         Product product = new Product(sellIn, quality);
         product.passDays(1);
-        assertEquals(product.getQuality(), 4);
+        assertEquals(4, product.getQuality());
     }
 
     @Test
@@ -20,7 +20,7 @@ public class ProductTest {
         int quality = 5;
         Product product = new Product(sellIn, quality);
         product.passDays(1);
-        assertEquals(product.getQuality(), 3);
+        assertEquals(3, product.getQuality());
     }
 
     @Test
@@ -29,7 +29,7 @@ public class ProductTest {
         int quality = 10;
         Product product = new Product(sellIn, quality);
         product.passDays(5);
-        assertEquals(product.getQuality(), 5);
+        assertEquals(5, product.getQuality());
     }
 
     @Test
@@ -38,7 +38,7 @@ public class ProductTest {
         int quality = 10;
         Product product = new Product(sellIn, quality);
         product.passDays(5);
-        assertEquals(product.getQuality(), 0);
+        assertEquals(0, product.getQuality());
     }
 
     @Test
@@ -47,19 +47,27 @@ public class ProductTest {
         int quality = 20;
         Product product = new Product(sellIn, quality);
         product.passDays(10);
-        assertEquals(product.getQuality(), 5);
+        assertEquals(5, product.getQuality());
     }
 
     @Test
-    public void should_quality_is_bigger_than_0_when_multiple_day_passed_given_and_quality_bigger_than_0_product() {
+    public void should_quality_is_bigger_than_0_when_multiple_day_passed_given_and_product_quality_bigger_than_0() {
         int sellIn = 5;
         int quality = 5;
         Product product = new Product(sellIn, quality);
         product.passDays(10);
-        assertEquals(product.getQuality(), 0);
+        assertEquals(0, product.getQuality());
     }
 
 
+    @Test
+    public void should_quality_is_49_when_one_day_passed_given_an_product_quality_bigger_than_50() {
+        int sellIn = 5;
+        int quality = 100;
+        Product product = new Product(sellIn, quality);
+        product.passDays(1);
+        assertEquals(49, product.getQuality());
+    }
 
 
 }
