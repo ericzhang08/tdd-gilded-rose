@@ -13,6 +13,5 @@ public class AgedBrie extends Product {
     @Override
     public void updateQualityExpired() {
         quality += 2;
-        quality = Math.min(quality, 50);
     }
 }

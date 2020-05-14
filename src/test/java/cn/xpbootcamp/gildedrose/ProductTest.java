@@ -165,5 +165,14 @@ public class ProductTest {
         assertEquals(0, product.getQuality());
     }
 
+    @Test
+    public void should_quality_is_50_when_multiple_days_passed_given_Backstage_pass_product_quality_increase_bigger_than_50() {
+        int sellIn = 10;
+        int quality = 48;
+        Product product = Product.create("Backstage pass", sellIn, quality);
+        product.passDays(5);
+        assertEquals(50, product.getQuality());
+    }
+
 
 }
