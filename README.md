@@ -28,4 +28,25 @@
 	- 一旦过了演出日，价值就马上变成0
 
 
+tasking:
+1. given on date normal product when one day passed then quality decrease 1 point per day
+2. given an out of date normal product when one day passed then quality decrease 2 point per day
+3. given on date normal product when multiple day passed  then quality decrease 1 point per day
+4. given an out of date normal product when multiple day passed  then quality decrease 2 point per day
+5. given an on date product become an out of date normal product when multiple day passed  then quality decrease
+6. given an normal product quality bigger than 0 when multiple day passed  then quality is bigger than 0
+7. given an normal product quality bigger than 50 when one day passed  then quality is 49
+8. given aged brie product is on date when multiple day passed  then quality increase one point per day
+9. given aged brie product is out of date when multiple day passed  then quality increase two point per day
+10 given aged brie product quality is smaller than 50 and increase to 50 when multiple day passed  then biggest quality is 50 
+11. given an on date aged brie product become an out of  product when multiple day passed  then quality increase 
+12. given an on date sulfuras product when multiple days passed  then quality does not change
+13. given an on date sulfuras product become an out of date sulfuras product when multiple day passed  then quality does not change
+14. given an on date Backstage pass product sellin over 10 days  when multiple days passed  then quality increase 1 per day 
+15. given an on date Backstage pass product sellin over 10 days become less than 10 days  when multiple days passed  then quality increase
+16. given an on date Backstage pass product sellin over 10 days become less than 5 days when multiple days passed  then quality increase 
+17.given an on date Backstage pass product over 10 days become out of date  when multiple days passed  then quality is 0 
+18.given an Backstage pass product quality increase bigger than 50 when multiple days passed  then quality is 50 
+
+
 
