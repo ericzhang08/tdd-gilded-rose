@@ -138,6 +138,14 @@ public class ProductTest {
         assertEquals(23, product.getQuality());
     }
 
+    @Test
+    public void should_quality_increase_when_multiple_days_passed_given_an_on_date_over_10_days_become_less_than_10_days_Backstage_pass_product() {
+        int sellIn = 15;
+        int quality = 20;
+        Product product = Product.create("Backstage pass", sellIn, quality);
+        product.passDays(10);
+        assertEquals(35, product.getQuality());
+    }
 
 
 }
