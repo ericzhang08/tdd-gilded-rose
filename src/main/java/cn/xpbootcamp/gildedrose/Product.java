@@ -14,7 +14,15 @@ public class Product {
         this.quality = quality;
     }
     public static Product create(String type, int sellIn, int quality) {
-        return new Product(type, sellIn, quality);
+        switch (type){
+            case "Aged Brie":
+                return new AgedBrie(sellIn, quality);
+            case "Sulfuras":
+                return new Sulfuras(sellIn, quality);
+            default:
+                return new Product(type, sellIn, quality);
+        }
+
     }
 
     public void passDays(int days) {
