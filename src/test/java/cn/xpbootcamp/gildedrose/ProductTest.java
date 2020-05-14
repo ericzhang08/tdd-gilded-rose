@@ -135,8 +135,9 @@ public class ProductTest {
         int quality = 20;
         Product product = Product.create("Backstage pass", sellIn, quality);
         product.passDays(3);
-        assertEquals(17, product.getQuality());
+        assertEquals(23, product.getQuality());
     }
+
 
 
 }

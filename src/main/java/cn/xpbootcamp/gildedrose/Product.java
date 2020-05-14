@@ -20,6 +20,8 @@ public class Product {
                 return new AgedBrie(sellIn, quality);
             case "Sulfuras":
                 return new Sulfuras(sellIn, quality);
+            case "Backstage pass":
+                return new BackstagePass(sellIn, quality);
             default:
                 return new Product(type, sellIn, quality);
         }
