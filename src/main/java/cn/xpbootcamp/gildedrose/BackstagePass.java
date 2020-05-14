@@ -9,7 +9,7 @@ public class BackstagePass extends Product {
     @Override
     public void updateQualityUnexpired() {
         quality++;
-        if(sellIn <= 10){
+        if(sellIn <= 10 ){
             quality++;
         }
         if(sellIn <= 5 ){
@@ -19,6 +19,6 @@ public class BackstagePass extends Product {
 
     @Override
     public void updateQualityExpired() {
-        super.updateQualityExpired();
+            quality = 0;
     }
 }

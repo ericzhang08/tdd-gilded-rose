@@ -156,5 +156,14 @@ public class ProductTest {
         assertEquals(41, product.getQuality());
     }
 
+    @Test
+    public void should_quality_is_0_when_multiple_days_passed_given_an_on_date_over_10_days_become_out_of_date_Backstage_pass_product() {
+        int sellIn = 15;
+        int quality = 20;
+        Product product = Product.create("Backstage pass", sellIn, quality);
+        product.passDays(20);
+        assertEquals(0, product.getQuality());
+    }
+
 
 }
