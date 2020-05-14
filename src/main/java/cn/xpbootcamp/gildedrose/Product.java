@@ -1,9 +1,9 @@
 package cn.xpbootcamp.gildedrose;
 
 public class Product {
-    private int sellIn;
-    private int quality;
-    private String type;
+    int sellIn;
+    int quality;
+    String type;
 
     public Product(String type, int sellIn, int quality) {
         if (quality > 50) {
@@ -13,8 +13,9 @@ public class Product {
         this.sellIn = sellIn;
         this.quality = quality;
     }
+
     public static Product create(String type, int sellIn, int quality) {
-        switch (type){
+        switch (type) {
             case "Aged Brie":
                 return new AgedBrie(sellIn, quality);
             case "Sulfuras":
@@ -43,24 +44,19 @@ public class Product {
         }
     }
 
-    private void updateQualityUnexpired() {
-        if (type.equals("Aged Brie")) {
-            quality++;
-        } else {
+    public void updateQualityUnexpired() {
+        {
             if (!type.equals("Sulfuras")) {
                 quality--;
             }
+
         }
     }
 
-    private void updateQualityExpired() {
-        if (type.equals("Aged Brie")) {
-            quality += 2;
-            quality = Math.min(quality, 50);
-        } else {
-            if (!type.equals("Sulfuras")) {
-                quality -= 2;
-            }
+    public void updateQualityExpired() {
+
+        if (!type.equals("Sulfuras")) {
+            quality -= 2;
         }
     }
 
