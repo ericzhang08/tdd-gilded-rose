@@ -45,19 +45,11 @@ public class Product {
     }
 
     public void updateQualityUnexpired() {
-        {
-            if (!type.equals("Sulfuras")) {
-                quality--;
-            }
-
-        }
+        quality--;
     }
 
     public void updateQualityExpired() {
-
-        if (!type.equals("Sulfuras")) {
-            quality -= 2;
-        }
+        quality -= 2;
     }
 
     private boolean isExpired() {
