@@ -11,6 +11,9 @@ public class AgedBrie {
 
     public void oneDayPass() {
         quality++;
+        if (sellIn <= 0) {
+            quality++;
+        }
         sellIn--;
     }
 
