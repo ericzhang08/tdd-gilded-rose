@@ -16,6 +16,10 @@ public class NormalProduct {
         quality--;
         this.sellIn--;
 
+        if (quality < 0) {
+            quality = 0;
+        }
+
     }
 
     public int getSellIn() {
