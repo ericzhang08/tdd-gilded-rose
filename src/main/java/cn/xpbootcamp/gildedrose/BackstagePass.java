@@ -18,6 +18,9 @@ public class BackstagePass {
             quality++;
         }
         sellIn--;
+        if (sellIn < 0) {
+            quality =0;
+        }
     }
 
     public int getSellIn() {
