@@ -10,8 +10,12 @@ public class NormalProduct {
     }
 
     public void oneDayPass() {
-        this.sellIn--;
+        if(sellIn <= 0){
+            quality--;
+        }
         quality--;
+        this.sellIn--;
+
     }
 
     public int getSellIn() {
