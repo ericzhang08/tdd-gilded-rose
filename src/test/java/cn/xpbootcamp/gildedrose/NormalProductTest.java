@@ -13,5 +13,11 @@ public class NormalProductTest {
         assertEquals(normalProduct.getQuality(), 9);
     }
 
-
+    @Test
+    public void should_sellIn_0_and_quality_9_when_one_day_pass_given_normal_product_sellIn_1_quality_10() {
+        NormalProduct normalProduct = new NormalProduct(1, 10);
+        normalProduct.oneDayPass();
+        assertEquals(normalProduct.getSellIn(), 0);
+        assertEquals(normalProduct.getQuality(), 9);
+    }
 }
