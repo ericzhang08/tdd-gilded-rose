@@ -45,5 +45,13 @@ public class AgedBrieTest {
         assertEquals(agedBrie.getQuality(), 50);
     }
 
+    @Test
+    public void should_sellIn_n1_and_quality_50_when_one_day_pass_given_Aged_Brie_sellIn_0_quality_49() {
+        AgedBrie agedBrie = new AgedBrie(0, 49);
+        agedBrie.oneDayPass();
+        assertEquals(agedBrie.getSellIn(), -1);
+        assertEquals(agedBrie.getQuality(), 50);
+    }
+
 
 }

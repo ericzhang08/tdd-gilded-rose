@@ -15,6 +15,9 @@ public class AgedBrie {
             quality++;
         }
         sellIn--;
+        if (quality > 50) {
+            quality = 50;
+        }
     }
 
     public int getSellIn() {
