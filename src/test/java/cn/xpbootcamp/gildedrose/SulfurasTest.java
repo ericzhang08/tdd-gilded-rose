@@ -13,4 +13,13 @@ public class SulfurasTest {
         assertEquals(sulfuras.getSellIn(), 1);
         assertEquals(sulfuras.getQuality(), 50);
     }
+
+    @Test
+    public void should_sellIn_0_and_quality_49_when_one_day_pass_given_sulfuras_sellIn_1_quality_49() {
+        Sulfuras sulfuras = new Sulfuras(1, 49);
+        sulfuras.oneDayPass();
+        assertEquals(sulfuras.getSellIn(), 0);
+        assertEquals(sulfuras.getQuality(), 49);
+    }
+
 }
