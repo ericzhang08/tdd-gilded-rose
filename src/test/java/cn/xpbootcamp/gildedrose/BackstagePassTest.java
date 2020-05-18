@@ -37,4 +37,13 @@ public class BackstagePassTest {
         assertEquals(backstagePass.getQuality(), 0);
     }
 
+
+    @Test
+    public void should_sellIn_4_and_quality_50_when_one_day_pass_given_back_stage_pass_sellIn_5_quality_49() {
+        BackstagePass backstagePass = new BackstagePass(5, 49);
+        backstagePass.oneDayPass();
+        assertEquals(backstagePass.getSellIn(), 4);
+        assertEquals(backstagePass.getQuality(), 50);
+    }
+
 }
